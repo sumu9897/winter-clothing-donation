@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "title": "Save the Children",
+      "image": "https://i.ibb.co.com/YPgK1Bc/save-the-children-1.jpg",
+      "description": "Help provide food and shelter for underprivileged children.",
+      "status": "Active",
+      "contactInfo": "contact@savechildren.org",
+      "division": "Dhaka"
+    },
+    {
+      "id": 2,
+      "title": "Flood Relief Fund",
+      "image": "https://i.ibb.co.com/CB16KFg/Flood-Relief-Fund.jpg",
+      "description": "Providing essentials to families affected by flooding.",
+      "status": "Active",
+      "contactInfo": "relief@helpnow.org",
+      "division": "Chittagong"
+    },
+    {
+      "id": 3,
+      "title": "Medical Aid for All",
+      "image": "https://i.ibb.co.com/WkG2tVZ/Medical-Aid-for-All.webp",
+      "description": "Supporting healthcare access in rural areas.",
+      "status": "Ongoing",
+      "contactInfo": "aid@healthforall.org",
+      "division": "Khulna"
+    },
+    {
+      "id": 4,
+      "title": "Winter Warmth Drive",
+      "image": "https://i.ibb.co.com/CvT82Tn/Winter-Warmth-Drive.jpg",
+      "description": "Distributing warm clothes to the homeless during winter.",
+      "status": "Planned",
+      "contactInfo": "info@winterwarmth.org",
+      "division": "Sylhet"
+    },
+    {
+      "id": 5,
+      "title": "Education for Everyone",
+      "image": "https://i.ibb.co.com/fkV3fBL/Education-for-Everyone.jpg",
+      "description": "Helping children in remote areas access education.",
+      "status": "Active",
+      "contactInfo": "education@hopeforall.org",
+      "division": "Barisal"
+    },
+    {
+      "id": 6,
+      "title": "Clean Water Initiative",
+      "image": "https://i.ibb.co.com/FYK0yHZ/Clean-Water-Initiative.jpg",
+      "description": "Providing clean drinking water to drought-prone regions.",
+      "status": "Active",
+      "contactInfo": "water@freshforall.org",
+      "division": "Rangpur"
+    },
+    {
+      "id": 7,
+      "title": "Orphan Care Program",
+      "image": "https://i.ibb.co.com/BKj9mpQ/Orphan-Care-Program.jpg",
+      "description": "Supporting orphaned children with basic needs and education.",
+      "status": "Ongoing",
+      "contactInfo": "support@orphancare.org",
+      "division": "Mymensingh"
+    },
+    {
+      "id": 8,
+      "title": "Rebuild Homes Project",
+      "image": "https://i.ibb.co.com/p3nxzR0/Rebuild-Homes-Project.jpg",
+      "description": "Helping families rebuild their homes after natural disasters.",
+      "status": "Active",
+      "contactInfo": "rebuild@hopefoundation.org",
+      "division": "Rajshahi"
+    }
+]
+  

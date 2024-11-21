@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-primary {
+  color: #007bff; 
+  font-weight: bold;
+}
