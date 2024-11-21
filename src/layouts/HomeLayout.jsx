@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -15,6 +17,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 function HomeLayout() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
   const testimonials = [
     {
       quote:
@@ -58,6 +67,33 @@ function HomeLayout() {
       once: true,
     });
   }, []);
+
+  const handleVolunteerClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { fullName, email, phone, message } = formData;
+    if (!fullName || !email || !phone || !message) {
+      toast.error('Please fill out all fields!');
+      return;
+    }
+
+    setFormData({ fullName: '', email: '', phone: '', message: '' });
+    toast.success('Thank you for signing up as a volunteer!');
+    closeModal();
+  };
 
   return (
     <div className="mx-auto">
@@ -202,19 +238,85 @@ function HomeLayout() {
               Join as a Volunteer
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6" data-aos="fade-up" data-aos-delay="200">
-              Be part of a community dedicated to making a difference. Volunteer with us to help
-              collect, sort, and distribute donations to those who need them most.
+              Be part of a community dedicated to making a difference.
             </p>
-            <Link
-              to="/volunteer"
-              className="btn btn-primary"
+            <button
+              onClick={handleVolunteerClick}
+              className="px-6 py-3 text-white bg-primary rounded shadow-md hover:bg-primary-dark focus:ring focus:ring-primary-light transition-all"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               Become a Volunteer
-            </Link>
+            </button>
           </div>
         </section>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative">
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+              >
+                &times;
+              </button>
+              <h3 className="text-2xl font-semibold mb-4 text-center">Volunteer Signup</h3>
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block text-gray-700 font-medium">Full Name</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-medium">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-medium">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-medium">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
+                    rows="4"
+                    placeholder="Why do you want to join?"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-white px-6 py-3 rounded shadow-md hover:bg-primary-dark transition-all"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
 
         {/* FAQ Section */}
         <section className="bg-gray-50 px-6 py-12">
