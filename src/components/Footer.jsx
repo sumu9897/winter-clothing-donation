@@ -49,28 +49,36 @@ const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-400 transition">
+              className="hover:text-yellow-400 transition"
+              aria-label="Visit our Facebook page"
+            >
               <FaFacebookF className="text-xl" />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-400 transition">
+              className="hover:text-yellow-400 transition"
+              aria-label="Visit our Twitter profile"
+            >
               <FaTwitter className="text-xl" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-400 transition">
+              className="hover:text-yellow-400 transition"
+              aria-label="Visit our Instagram page"
+            >
               <FaInstagram className="text-xl" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-400 transition">
+              className="hover:text-yellow-400 transition"
+              aria-label="Visit our LinkedIn profile"
+            >
               <FaLinkedinIn className="text-xl" />
             </a>
           </div>
@@ -106,11 +114,14 @@ const Footer = () => {
             href="https://github.com/sumu9897"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-400 hover:underline">
+            className="text-yellow-500 hover:underline"
+          >
             Mohammad Sumon
           </a>
         </p>
       </div>
+
+
     </footer>
   );
 };
