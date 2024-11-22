@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { toast } from "react-toastify";
 
 function UpdateProfile() {
@@ -44,7 +42,7 @@ function UpdateProfile() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
+
       <div className="pt-20 pb-5">
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
           {/* Title Section */}
@@ -132,7 +130,7 @@ function UpdateProfile() {
           </form>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 }

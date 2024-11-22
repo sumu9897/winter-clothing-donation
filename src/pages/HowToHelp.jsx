@@ -1,11 +1,7 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
 function HowToHelp() {
   return (
     <div className="min-h-screen bg-gray-100">
-        <Navbar/>
+
       {/* Hero Section */}
       <section className="bg-blue-600 text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
@@ -76,7 +72,7 @@ function HowToHelp() {
           </button>
         </div>
       </section>
-      <Footer/>
+
     </div>
   );
 }

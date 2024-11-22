@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import { AuthContext } from "../provider/AuthProvider"; 
 
 function Campaign() {
@@ -29,7 +28,7 @@ function Campaign() {
 
   return (
     <div>
-      <Navbar />
+
       <div className="container mx-auto py-20">
         <h2 className="text-3xl font-semibold text-center mb-6">
           Donation Campaigns
@@ -59,7 +58,7 @@ function Campaign() {
           ))}
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 }

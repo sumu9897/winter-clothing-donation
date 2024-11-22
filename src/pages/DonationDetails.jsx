@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import { toast, ToastContainer } from "react-toastify";  // Import ToastContainer
 import { AuthContext } from "../provider/AuthProvider"; 
 
@@ -84,7 +83,6 @@ function DonationDetails() {
 
   return (
     <div>
-      <Navbar />
       <div className="container mx-auto py-8">
         <h2 className="text-3xl font-semibold text-center mb-6">
           {donation.title}
@@ -161,7 +159,6 @@ function DonationDetails() {
           </div>
         )}
       </div>
-      <Footer />
       
       {/* Toast Container to show the toast messages */}
       <ToastContainer />

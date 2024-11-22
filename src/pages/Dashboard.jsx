@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 function Dashboard() {
   const { user } = useContext(AuthContext);
@@ -10,7 +8,7 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-        <Navbar/>
+
         <div className=" pt-20 pb-5">
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
         {/* Welcome Section */}
@@ -69,7 +67,6 @@ function Dashboard() {
         </div>
       </div>
         </div>
-        <Footer/>
       
     </div>
   );
