@@ -1,79 +1,74 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-// Import Swiper components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    message: '',
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
   });
+
   const testimonials = [
     {
       quote:
-        "It feels great knowing that my donations are making a real difference in someone's life. Thank you for this platform!",
-      name: 'Sara Khan',
-      location: 'Dhaka',
-    },
-    {
-      quote: 'I appreciate how easy it was to donate. This is such a great cause!',
-      name: 'Rashed Ali',
-      location: 'Chittagong',
+        "This platform made donating incredibly easy. Glad to be part of such a meaningful mission.",
+      name: "Sara Khan",
+      location: "Dhaka",
     },
     {
       quote:
-        "It's great to see a platform dedicated to helping those who need it the most during the cold months.",
-      name: 'Mina Sultana',
-      location: 'Sylhet',
+        "I never realized how many people suffer during winter. This platform truly makes a difference.",
+      name: "Rashed Ali",
+      location: "Chittagong",
+    },
+    {
+      quote:
+        "A beautiful initiative. Proud to support and help vulnerable families stay warm.",
+      name: "Mina Sultana",
+      location: "Sylhet",
     },
   ];
 
-  const howItWorksSteps = [
+  const steps = [
     {
-      title: 'Step 1: Choose a Campaign',
+      title: "Step 1: Choose a Campaign",
       description:
-        'Browse through the active donation campaigns and choose one that you would like to contribute to.',
+        "Explore our active campaigns and select one where you'd like to contribute.",
     },
     {
-      title: 'Step 2: Fill the Donation Form',
-      description: 'Fill out the donation form with details about the items you want to donate.',
+      title: "Step 2: Fill the Donation Form",
+      description:
+        "Provide details of your winter clothes and items for donation.",
     },
     {
-      title: 'Step 3: We Pick It Up',
-      description: 'Our volunteers will arrange a pickup from your location. Simple and easy!',
+      title: "Step 3: We Pick It Up",
+      description:
+        "Our volunteers coordinate with you and collect items from your doorstep.",
     },
   ];
 
   useEffect(() => {
     AOS.init({
-      duration: 1200,
+      duration: 1000,
       offset: 100,
       once: true,
     });
   }, []);
 
-  const handleVolunteerClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -85,142 +80,108 @@ function Home() {
 
     const { fullName, email, phone, message } = formData;
     if (!fullName || !email || !phone || !message) {
-      toast.error('Please fill out all fields!');
+      toast.error("Please fill in all fields!");
       return;
     }
 
-    setFormData({ fullName: '', email: '', phone: '', message: '' });
-    toast.success('Thank you for signing up as a volunteer!');
+    toast.success("Thank you for signing up as a volunteer!");
+    setFormData({ fullName: "", email: "", phone: "", message: "" });
     closeModal();
   };
 
   return (
     <div className="mx-auto">
-
-      {/* Main Content */}
+      {/* HERO / SLIDER */}
       <div className="pt-20">
-        {/* Banner/Slider Section */}
         <Swiper
-            autoHeight={true}
-            spaceBetween={20}
-            navigation={true}
-            pagination={{
-                clickable: true,
-            }}
-            modules={[Navigation, Pagination]}
-            className="mySwiper"
-            >
-            <SwiperSlide>
-                <div
-                className="text-white text-center py-20 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('https://i.ibb.co.com/K5WFSD7/donation-concept-preparing-used-old-clothes-from-wardrobe-rack-into-donate-box-34048-1450.jpg')`,
-                }}
-                >
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                    Warm Hearts, Warm Winters
-                </h2>
-                <p className="text-lg md:text-xl mb-6">
-                    Winter can be a harsh season for those without the proper clothing. 
-                    Together, we can help provide warmth and comfort to vulnerable communities. 
-                </p>
-                <button className="mt-6 px-6 py-2 bg-primary rounded text-white text-lg hover:bg-primary-dark">
-                    Donate Now
-                </button>
-                </div>
-            </SwiperSlide>
+          spaceBetween={20}
+          navigation={true}
+          autoplay={{ delay: 4000 }}
+          pagination={{ clickable: true }}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="mySwiper"
+        >
+          {[
+            {
+              img: "https://i.ibb.co.com/K5WFSD7/donation-concept-preparing-used-old-clothes-from-wardrobe-rack-into-donate-box-34048-1450.jpg",
+              title: "Warm Hearts, Warm Winters",
+              text: "Thousands struggle through winter without proper clothing. Together, we can make a difference.",
+              btn: "Donate Now",
+            },
+            {
+              img: "https://i.ibb.co.com/2gY9y8k/View-Campaigns.webp",
+              title: "Every Donation Creates Hope",
+              text: "Your small act of kindness can bring warmth and dignity to someone in need.",
+              btn: "View Campaigns",
+            },
+            {
+              img: "https://i.ibb.co.com/5shb8JN/watercolor-human-rights-day-background-23-2150998255.jpg",
+              title: "Together, We Create Impact",
+              text: "Join hands with us to support communities across Bangladesh during harsh winters.",
+              btn: "Join as Volunteer",
+            },
+            {
+              img: "https://i.ibb.co.com/qgCSWJc/learn-more.webp",
+              title: "Make Winter Warmer",
+              text: "Your support helps us reach families who need warmth, care, and protection.",
+              btn: "Learn More",
+            },
+          ].map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="h-[70vh] md:h-[85vh] flex items-center justify-center text-center text-white bg-cover bg-center relative"
+                style={{ backgroundImage: `url('${slide.img}')` }}
+              >
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-            <SwiperSlide>
-                <div
-                className="text-white text-center py-20 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('https://i.ibb.co.com/2gY9y8k/View-Campaigns.webp')`,
-                }}
-                >
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                    Every Donation Counts
-                </h2>
-                <p className="text-lg md:text-xl mb-6">
-                    A single act of kindness can spark hope in someone's life. 
-                    Every coat, sweater, or blanket you donate has the power to make winters warmer.
-                </p>
-                <button className="mt-6 px-6 py-2 bg-primary rounded text-white text-lg hover:bg-primary-dark">
-                    View Campaigns
-                </button>
+                <div className="relative z-10 px-4 md:px-10">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+                    {slide.title}
+                  </h2>
+                  <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+                    {slide.text}
+                  </p>
+                  <button className="mt-4 px-6 py-3 bg-primary rounded text-white text-lg hover:bg-primary-dark transition">
+                    {slide.btn}
+                  </button>
                 </div>
+              </div>
             </SwiperSlide>
-
-            <SwiperSlide>
-                <div
-                className="text-black text-center py-20 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('https://i.ibb.co.com/5shb8JN/watercolor-human-rights-day-background-23-2150998255.jpg')`,
-                }}
-                >
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                    Together, We Create Impact
-                </h2>
-                <p className="text-lg md:text-xl mb-6">
-                    Join hands with us to build a community of compassion. 
-                    With your help, we can reach the farthest corners of Bangladesh, bringing relief to those in need.
-                </p>
-                <button className="mt-6 px-6 py-2 bg-primary rounded text-white text-lg hover:bg-primary-dark">
-                    Join as Volunteer
-                </button>
-                </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-                <div
-                className=" text-center py-20 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('https://i.ibb.co.com/qgCSWJc/learn-more.webp')`,
-                }}
-                >
-                <h2 className="text-3xl text-blue-700 md:text-5xl font-bold mb-4">
-                    Make Winter Warmer
-                </h2>
-                <p className="text-lg md:text-xl text-gray-400 mb-6">
-                    Your generosity brings smiles and warmth to countless families. 
-                    Together, we can make winters a little easier for those who need it most.
-                </p>
-                <button className="mt-6 px-6 py-2 bg-primary rounded text-white text-lg hover:bg-primary-dark">
-                    Learn More
-                </button>
-                </div>
-            </SwiperSlide>
+          ))}
         </Swiper>
 
-
-
-
-        {/* About Section */}
+        {/* ABOUT SECTION */}
         <section className="bg-gray-100 px-6 py-12" data-aos="fade-up">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6">About Us</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Our mission is to collect and distribute winter clothing to those in need, especially
-              in rural and low-income areas of Bangladesh. Your contribution can make a tangible
-              impact in someone's life. Together, we can create a warmer future.
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl font-semibold mb-5">About Us</h2>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              We are committed to supporting vulnerable communities during harsh
+              winters by collecting and distributing warm clothing across
+              Bangladesh. Every item you donate—whether a sweater, blanket, or
+              jacket—helps protect someone from the cold. Together, we can build
+              a compassionate community where no one has to endure winter
+              unprotected.
             </p>
           </div>
         </section>
 
-        {/* How It Works Section */}
-        <section className="px-6 py-12">
+        {/* HOW IT WORKS */}
+        <section className="px-6 py-12" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8 text-center" data-aos="fade-up">
+            <h2 className="text-3xl font-semibold text-center mb-10">
               How It Works
             </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {howItWorksSteps.map((step, index) => (
+              {steps.map((step, i) => (
                 <div
-                  key={index}
-                  className="p-6 bg-white shadow-lg rounded-lg text-center"
+                  key={i}
+                  className="bg-white shadow-md p-6 rounded-lg text-center"
                   data-aos="fade-up"
-                  data-aos-delay={`${index * 200}`}
+                  data-aos-delay={i * 200}
                 >
-                  <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
@@ -228,85 +189,73 @@ function Home() {
           </div>
         </section>
 
-        {/* Join as Volunteer Section */}
-        <section className="bg-gray-100 px-6 py-12">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6" data-aos="fade-up">
-              Join as a Volunteer
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6" data-aos="fade-up" data-aos-delay="200">
-              Be part of a community dedicated to making a difference.
+        {/* VOLUNTEER SECTION */}
+        <section className="bg-gray-100 px-6 py-12" data-aos="fade-up">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl font-semibold mb-6">Join as a Volunteer</h2>
+            <p className="text-gray-700 text-lg mb-6">
+              Be part of a community-driven mission. Our volunteers are the
+              reason we can reach thousands of families every winter. Your time
+              and effort can help keep someone warm and safe.
             </p>
             <button
-              onClick={handleVolunteerClick}
-              className="px-6 py-3 text-white bg-primary rounded shadow-md hover:bg-primary-dark focus:ring focus:ring-primary-light transition-all"
-              data-aos="fade-up"
-              data-aos-delay="400"
+              onClick={openModal}
+              className="px-6 py-3 bg-primary text-white rounded shadow hover:bg-primary-dark transition"
             >
               Become a Volunteer
             </button>
           </div>
         </section>
 
-        {/* Modal */}
+        {/* VOLUNTEER MODAL */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
               <button
                 onClick={closeModal}
-                className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl"
               >
                 &times;
               </button>
-              <h3 className="text-2xl font-semibold mb-4 text-center">Volunteer Signup</h3>
+
+              <h3 className="text-2xl font-bold mb-5 text-center">
+                Volunteer Signup
+              </h3>
+
               <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label className="block text-gray-700 font-medium">Full Name</label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-medium">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-medium">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-medium">Message</label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-primary-light"
-                    rows="4"
-                    placeholder="Why do you want to join?"
-                  ></textarea>
-                </div>
+                <input
+                  className="w-full border px-4 py-2 rounded"
+                  placeholder="Full Name"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="w-full border px-4 py-2 rounded"
+                  placeholder="Email Address"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="w-full border px-4 py-2 rounded"
+                  placeholder="Phone Number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <textarea
+                  className="w-full border px-4 py-2 rounded"
+                  placeholder="Why do you want to volunteer?"
+                  rows="4"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white px-6 py-3 rounded shadow-md hover:bg-primary-dark transition-all"
+                  className="w-full bg-primary text-white py-3 rounded hover:bg-primary-dark transition"
                 >
                   Submit
                 </button>
@@ -315,41 +264,54 @@ function Home() {
           </div>
         )}
 
-        {/* FAQ Section */}
-        <section className="bg-gray-50 px-6 py-12">
+        {/* FAQ */}
+        <section className="bg-gray-50 px-6 py-12" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8 text-center" data-aos="fade-up">
-              Frequently Asked Questions (FAQs)
+            <h2 className="text-3xl font-semibold text-center mb-10">
+              Frequently Asked Questions
             </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div data-aos="fade-up" data-aos-delay="200">
-                <h3 className="font-semibold text-lg">How can I donate?</h3>
+                <h3 className="font-semibold text-lg">
+                  How do I donate winter clothes?
+                </h3>
                 <p className="text-gray-600 mt-2">
-                  Simply navigate to our campaign page, select a campaign, and fill out the donation form.
+                  Visit the campaign page, select a campaign, and fill out the
+                  donation form.
                 </p>
               </div>
+
               <div data-aos="fade-up" data-aos-delay="400">
-                <h3 className="font-semibold text-lg">Where do my donations go?</h3>
+                <h3 className="font-semibold text-lg">
+                  Who receives the donated items?
+                </h3>
                 <p className="text-gray-600 mt-2">
-                  All donations are distributed to underprivileged communities across Bangladesh, focusing on rural areas.
+                  Donations are distributed to vulnerable families in rural and
+                  low-income communities across Bangladesh.
                 </p>
               </div>
+
               <div data-aos="fade-up" data-aos-delay="600">
-                <h3 className="font-semibold text-lg">Can I volunteer for pickup services?</h3>
+                <h3 className="font-semibold text-lg">
+                  Can I volunteer for item pickups?
+                </h3>
                 <p className="text-gray-600 mt-2">
-                  Yes! Volunteers are crucial to our mission. You can sign up on our Volunteer page.
+                  Absolutely! Volunteers are essential to our mission. Sign up
+                  through the volunteer form.
                 </p>
               </div>
+
               <div data-aos="fade-up" data-aos-delay="800">
                 <h3 className="font-semibold text-lg">How do I contact you?</h3>
                 <p className="text-gray-600 mt-2">
-                  You can reach us through the contact form on our website or email us directly.
+                  You can reach us using the contact form or email us directly
+                  for support.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
       </div>
     </div>
   );
