@@ -1,75 +1,202 @@
 [
-    {
-      "id": 1,
-      "title": "Save the Children",
-      "image": "https://i.ibb.co.com/YPgK1Bc/save-the-children-1.jpg",
-      "description": "Help provide food and shelter for underprivileged children.",
-      "status": "Active",
-      "contactInfo": "contact@savechildren.org",
-      "division": "Dhaka"
-    },
-    {
-      "id": 2,
-      "title": "Flood Relief Fund",
-      "image": "https://i.ibb.co.com/CB16KFg/Flood-Relief-Fund.jpg",
-      "description": "Providing essentials to families affected by flooding.",
-      "status": "Active",
-      "contactInfo": "relief@helpnow.org",
-      "division": "Chittagong"
-    },
-    {
-      "id": 3,
-      "title": "Medical Aid for All",
-      "image": "https://i.ibb.co.com/WkG2tVZ/Medical-Aid-for-All.webp",
-      "description": "Supporting healthcare access in rural areas.",
-      "status": "Ongoing",
-      "contactInfo": "aid@healthforall.org",
-      "division": "Khulna"
-    },
-    {
-      "id": 4,
-      "title": "Winter Warmth Drive",
-      "image": "https://i.ibb.co.com/CvT82Tn/Winter-Warmth-Drive.jpg",
-      "description": "Distributing warm clothes to the homeless during winter.",
-      "status": "Planned",
-      "contactInfo": "info@winterwarmth.org",
-      "division": "Sylhet"
-    },
-    {
-      "id": 5,
-      "title": "Education for Everyone",
-      "image": "https://i.ibb.co.com/fkV3fBL/Education-for-Everyone.jpg",
-      "description": "Helping children in remote areas access education.",
-      "status": "Active",
-      "contactInfo": "education@hopeforall.org",
-      "division": "Barisal"
-    },
-    {
-      "id": 6,
-      "title": "Clean Water Initiative",
-      "image": "https://i.ibb.co.com/FYK0yHZ/Clean-Water-Initiative.jpg",
-      "description": "Providing clean drinking water to drought-prone regions.",
-      "status": "Active",
-      "contactInfo": "water@freshforall.org",
-      "division": "Rangpur"
-    },
-    {
-      "id": 7,
-      "title": "Orphan Care Program",
-      "image": "https://i.ibb.co.com/BKj9mpQ/Orphan-Care-Program.jpg",
-      "description": "Supporting orphaned children with basic needs and education.",
-      "status": "Ongoing",
-      "contactInfo": "support@orphancare.org",
-      "division": "Mymensingh"
-    },
-    {
-      "id": 8,
-      "title": "Rebuild Homes Project",
-      "image": "https://i.ibb.co.com/p3nxzR0/Rebuild-Homes-Project.jpg",
-      "description": "Helping families rebuild their homes after natural disasters.",
-      "status": "Active",
-      "contactInfo": "rebuild@hopefoundation.org",
-      "division": "Rajshahi"
-    }
+  {
+    "id": 1,
+    "title": "Save the Children",
+    "image": "https://i.ibb.co.com/YPgK1Bc/save-the-children-1.jpg",
+    "description": "Help provide food and shelter for underprivileged children.",
+    "status": "Active",
+    "contactInfo": "contact@savechildren.org",
+    "division": "Dhaka",
+    "deadline": "December 31, 2026"
+  },
+  {
+    "id": 2,
+    "title": "Flood Relief Fund",
+    "image": "https://i.ibb.co.com/CB16KFg/Flood-Relief-Fund.jpg",
+    "description": "Providing essentials to families affected by flooding.",
+    "status": "Active",
+    "contactInfo": "relief@helpnow.org",
+    "division": "Chittagong",
+    "deadline": "March 15, 2026"
+  },
+  {
+    "id": 3,
+    "title": "Medical Aid for All",
+    "image": "https://i.ibb.co.com/WkG2tVZ/Medical-Aid-for-All.webp",
+    "description": "Supporting healthcare access in rural areas.",
+    "status": "Ongoing",
+    "contactInfo": "aid@healthforall.org",
+    "division": "Khulna",
+    "deadline": "April 30, 2026"
+  },
+  {
+    "id": 4,
+    "title": "Winter Warmth Drive",
+    "image": "https://i.ibb.co.com/CvT82Tn/Winter-Warmth-Drive.jpg",
+    "description": "Distributing warm clothes to the homeless during winter.",
+    "status": "Planned",
+    "contactInfo": "info@winterwarmth.org",
+    "division": "Sylhet",
+    "deadline": "February 28, 2026"
+  },
+  {
+    "id": 5,
+    "title": "Education for Everyone",
+    "image": "https://i.ibb.co.com/fkV3fBL/Education-for-Everyone.jpg",
+    "description": "Helping children in remote areas access education.",
+    "status": "Active",
+    "contactInfo": "education@hopeforall.org",
+    "division": "Barisal",
+    "deadline": "June 30, 2026"
+  },
+  {
+    "id": 6,
+    "title": "Clean Water Initiative",
+    "image": "https://i.ibb.co.com/FYK0yHZ/Clean-Water-Initiative.jpg",
+    "description": "Providing clean drinking water to drought-prone regions.",
+    "status": "Active",
+    "contactInfo": "water@freshforall.org",
+    "division": "Rangpur",
+    "deadline": "May 15, 2026"
+  },
+  {
+    "id": 7,
+    "title": "Orphan Care Program",
+    "image": "https://i.ibb.co.com/BKj9mpQ/Orphan-Care-Program.jpg",
+    "description": "Supporting orphaned children with basic needs and education.",
+    "status": "Ongoing",
+    "contactInfo": "support@orphancare.org",
+    "division": "Mymensingh",
+    "deadline": "December 20, 2026"
+  },
+  {
+    "id": 8,
+    "title": "Rebuild Homes Project",
+    "image": "https://i.ibb.co.com/p3nxzR0/Rebuild-Homes-Project.jpg",
+    "description": "Helping families rebuild their homes after natural disasters.",
+    "status": "Active",
+    "contactInfo": "rebuild@hopefoundation.org",
+    "division": "Rajshahi",
+    "deadline": "March 31, 2026"
+  },
+  {
+    "id": 9,
+    "title": "Blankets for the Elderly",
+    "image": "https://i.ibb.co.com/bL065jF/Donate-Clothing.webp",
+    "description": "Providing warm blankets and quilts to elderly people in remote villages during harsh winter months.",
+    "status": "Active",
+    "contactInfo": "elderly@warmhearts.org",
+    "division": "Dhaka",
+    "deadline": "February 20, 2026"
+  },
+  {
+    "id": 10,
+    "title": "Street Children Winter Relief",
+    "image": "https://i.ibb.co.com/K5WFSD7/donation-concept-preparing-used-old-clothes-from-wardrobe-rack-into-donate-box-34048-1450.jpg",
+    "description": "Distributing winter jackets, sweaters, and warm meals to street children across the city.",
+    "status": "Active",
+    "contactInfo": "street@childcare.org",
+    "division": "Chittagong",
+    "deadline": "February 25, 2026"
+  },
+  {
+    "id": 11,
+    "title": "Farmers Winter Support",
+    "image": "https://i.ibb.co.com/2gY9y8k/View-Campaigns.webp",
+    "description": "Supporting rural farmers with warm clothing and blankets to help them work through cold winter mornings.",
+    "status": "Ongoing",
+    "contactInfo": "farmers@ruralaid.org",
+    "division": "Khulna",
+    "deadline": "March 10, 2026"
+  },
+  {
+    "id": 12,
+    "title": "Newborn Winter Care",
+    "image": "https://i.ibb.co.com/5shb8JN/watercolor-human-rights-day-background-23-2150998255.jpg",
+    "description": "Providing warm baby clothes, blankets, and essential care items for newborns in low-income families.",
+    "status": "Active",
+    "contactInfo": "newborn@babycare.org",
+    "division": "Sylhet",
+    "deadline": "February 15, 2026"
+  },
+  {
+    "id": 13,
+    "title": "Tea Garden Workers Relief",
+    "image": "https://i.ibb.co.com/qgCSWJc/learn-more.webp",
+    "description": "Distributing winter clothing and blankets to tea garden workers and their families in hill districts.",
+    "status": "Planned",
+    "contactInfo": "teaworkers@laboraid.org",
+    "division": "Sylhet",
+    "deadline": "March 5, 2026"
+  },
+  {
+    "id": 14,
+    "title": "Winter School Uniform Drive",
+    "image": "https://i.ibb.co.com/fkV3fBL/Education-for-Everyone.jpg",
+    "description": "Providing warm winter uniforms, sweaters, and shoes for underprivileged school children.",
+    "status": "Active",
+    "contactInfo": "school@educationaid.org",
+    "division": "Barisal",
+    "deadline": "February 28, 2026"
+  },
+  {
+    "id": 15,
+    "title": "Homeless Shelter Support",
+    "image": "https://i.ibb.co.com/CvT82Tn/Winter-Warmth-Drive.jpg",
+    "description": "Creating temporary winter shelters and providing warm clothing for homeless individuals in urban areas.",
+    "status": "Active",
+    "contactInfo": "shelter@homelessaid.org",
+    "division": "Rangpur",
+    "deadline": "March 1, 2026"
+  },
+  {
+    "id": 16,
+    "title": "Fisherman Community Winter Aid",
+    "image": "https://i.ibb.co.com/CB16KFg/Flood-Relief-Fund.jpg",
+    "description": "Supporting fishing communities with warm clothing and blankets for early morning work during winter.",
+    "status": "Ongoing",
+    "contactInfo": "fisherman@coastalcare.org",
+    "division": "Mymensingh",
+    "deadline": "February 22, 2026"
+  },
+  {
+    "id": 17,
+    "title": "Tribal Community Winter Support",
+    "image": "https://i.ibb.co.com/5shb8JN/watercolor-human-rights-day-background-23-2150998255.jpg",
+    "description": "Providing warm clothes and blankets to indigenous communities in remote hill areas.",
+    "status": "Active",
+    "contactInfo": "tribal@communitysupport.org",
+    "division": "Rangpur",
+    "deadline": "March 8, 2026"
+  },
+  {
+    "id": 18,
+    "title": "Disabled Persons Winter Relief",
+    "image": "https://i.ibb.co.com/WkG2tVZ/Medical-Aid-for-All.webp",
+    "description": "Special winter clothing and blankets for persons with disabilities who are especially vulnerable to cold.",
+    "status": "Active",
+    "contactInfo": "disabled@inclusivecare.org",
+    "division": "Rajshahi",
+    "deadline": "February 18, 2026"
+  },
+  {
+    "id": 19,
+    "title": "Widow Support Winter Campaign",
+    "image": "https://i.ibb.co.com/BKj9mpQ/Orphan-Care-Program.jpg",
+    "description": "Supporting widows and single mothers with winter clothing and warm essentials for their families.",
+    "status": "Ongoing",
+    "contactInfo": "widow@womensupport.org",
+    "division": "Dhaka",
+    "deadline": "March 12, 2026"
+  },
+  {
+    "id": 20,
+    "title": "Night Guard Winter Protection",
+    "image": "https://i.ibb.co.com/2gY9y8k/View-Campaigns.webp",
+    "description": "Providing warm jackets, blankets, and thermal wear for night security guards working in cold weather.",
+    "status": "Planned",
+    "contactInfo": "guards@workerscare.org",
+    "division": "Chittagong",
+    "deadline": "February 28, 2026"
+  }
 ]
-  
